@@ -1,5 +1,6 @@
 from calibre_plugins.readwise.config import prefs
 from PyQt5.Qt import QDialog, QVBoxLayout, QLabel, QPushButton, QMessageBox
+from math import floor
 import urllib.request
 from urllib.parse import quote
 import json
@@ -122,7 +123,7 @@ class ReadwiseDialog(QDialog):
 
   # First x steps are boosted, rest are added/multiplied by 1
   # This is messy and crap, but seems to work - what's the easy way of doing this?
-  def calculatePosition(spine_index, cfi):
+  def calculatePosition(self, spine_index, cfi):
     stepsToBoost = 6
     boostMultiplier = 500
     boostTotal = (boostMultiplier * stepsToBoost)
