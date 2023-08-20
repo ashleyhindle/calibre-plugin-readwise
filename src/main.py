@@ -60,31 +60,6 @@ class ReadwiseDialog(QDialog):
 
     for book_id, annotations in books.items():
       metadata = db.get_metadata(book_id)
-      # {'end_cfi': '/2/4/4/4/2/1:16', 'highlighted_text': 'Everybody writes', 'spine_index': 5,
-      # 'spine_name': 'text/part0000_split_004.html',
-      #
-      # 'start_cfi': '/2/4/4/4/2/1:0',
-      #
-      # 'style': {'kind': 'color', 'type': 'builtin', 'which': 'yellow'}, 'timestamp': '2023-08-20T11:11:49.002Z',
-      # 'toc_family_titles': ['Introduction'], 'type': 'highlight', 'uuid': 'ECFjC40ZvzxRm4W7jAi7XQ'}
-
-      # {'end_cfi': '/2/4/4/4/2/1:772', 'highlighted_text': 'Every intellectual endeavour starts with a note.',
-      # 'spine_index': 5, 'spine_name': 'text/part0000_split_004.html',
-      #
-      # 'start_cfi': '/2/4/4/4/2/1:724',
-      #
-      # 'style': {'kind': 'color', 'type': 'builtin', 'which': 'yellow'}, 'timestamp': '2023-08-18T11:25:53.110Z',
-      # 'toc_family_titles': ['Introduction'], 'type': 'highlight', 'uuid': 'PfuFj7HgMlWdDtRRzEIwrA'}
-
-      # {'end_cfi': '/2/4/4/8/2/1:571',
-      # 'highlighted_text': 'improving the organisation of all writing makes a difference.', 'spine_index': 5,
-      # 'spine_name': 'text/part0000_split_004.html',
-      #
-      # 'start_cfi': '/2/4/4/8/2/1:522',
-      #
-      # 'style': {'kind': 'color', 'type': 'builtin', 'which': 'yellow'}, 'timestamp': '2023-08-18T11:30:44.807Z',
-      # 'toc_family_titles': ['Introduction'], 'type': 'highlight', 'uuid': '56yNKWGh3_FDdccrU5aO_w'}
-
 
       for annotation in annotations:
         link_prefix = f'calibre://view-book/{library_id}/{book_id}/{annotation["format"]}?open_at='
